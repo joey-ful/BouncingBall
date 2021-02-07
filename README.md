@@ -1,6 +1,6 @@
 ## Bouncing Ball Animation
 
-![bouncingball](https://user-images.githubusercontent.com/52592748/107151575-a80f6180-69a6-11eb-8f3e-11119ffd9714.gif)
+![bouncingball](https://user-images.githubusercontent.com/52592748/107151775-bb6efc80-69a7-11eb-9509-6bdc14b59b99.gif)
 
 ### 정리
 1. [[애니메이션 초기작업] 윈도우 창이 변할 때마다 Canvas 크기 새로 지정](https://velog.io/@jehjong/JS-Canvas-Animation-Bouncing-Ball)
