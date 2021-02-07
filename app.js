@@ -1,4 +1,5 @@
 import Ball from './ball.js';
+import Block from './pickme.js';
 import {logos} from './consts.js';
 
 class App {
@@ -13,6 +14,7 @@ class App {
     this.resize();
 
     this.balls = [];
+    this.block = new Block(this.stageWidth, this.stageHeight);
     this.createBall();
     this.slowDown();
     this.animate();
@@ -46,9 +48,9 @@ class App {
 
   createBall() {
     for (let i = 0; i < logos.length; i++) {
-      let radius = Math.ceil(Math.random() * 30) + 10;
-      let speedX = Math.ceil(Math.random() * 50) + 5;
-      let speedY = Math.ceil(Math.random() * 50) + 5;
+      let radius = Math.ceil(Math.random() * 25) + 5;
+      let speedX = Math.ceil(Math.random() * 25) + 5;
+      let speedY = Math.ceil(Math.random() * 25) + 5;
       let signX = speedX % 2 === 0 ? -1 : 1;
       let signY = speedY % 2 === 0 ? -1 : 1;
 
@@ -69,8 +71,10 @@ class App {
     window.requestAnimationFrame(this.animate.bind(this));
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
+    this.block.draw(this.ctx);
+
     this.balls.forEach((ball) => {
-      ball.draw(this.ctx, this.stageWidth, this.stageHeight);
+      ball.draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
     });
   }
 }
